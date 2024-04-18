@@ -98,7 +98,9 @@ const rkatex = (md, options) => {
     let escapedDepth = 0;
     while (pos < max) {
       const char = state.src.charAt(pos);
-      if (char === '{' && (pos == 0 || state.src.charAt(pos - 1) != backslash)) {
+      if (char === '\n') {
+        return false;
+      } else if (char === '{' && (pos == 0 || state.src.charAt(pos - 1) != backslash)) {
         escapedDepth += 1;
       } else if (char === '}' && (pos == 0 || state.src.charAt(pos - 1) != backslash)) {
         escapedDepth -= 1;
