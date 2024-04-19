@@ -1,6 +1,10 @@
 [![CI](https://github.com/bradhowes/remarkable-katex/workflows/CI/badge.svg)](https://github.com/bradhowes/remarkable-katex)
 [![License: MIT](https://img.shields.io/badge/License-MIT-A31F34.svg)](https://opensource.org/licenses/MIT)
 
+**About this fork:**
+
+Inline katex should not include `\n`. This fork makes the parser stop when enconter `\n` in inline katex.
+
 # Overview
 
 This is a [Remarkable](https://github.com/jonschlinkert/remarkable) plugin that converts

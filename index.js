@@ -98,7 +98,8 @@ const rkatex = (md, options) => {
     let escapedDepth = 0;
     while (pos < max) {
       const char = state.src.charAt(pos);
-      if (char === '\n') {
+      // if enconter \n in inline katex, reject
+      if (marker.length === 1 && char === '\n') {
         return false;
       } else if (char === '{' && (pos == 0 || state.src.charAt(pos - 1) != backslash)) {
         escapedDepth += 1;
